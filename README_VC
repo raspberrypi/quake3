@@ -1,0 +1,15 @@
+This is a port of Quake3 to run on 2727 via the USB hostport, based on the
+ioq3 codebase. All 2727-specific modifications are enclosed by one of
+
+VCMODS_MISC - small miscellaneous changes
+VCMODS_OPENGLES - remove desktop GL dependencies
+VCMODS_DEPTH - remove depth buffer clears
+VCMODS_NOSDL - remove SDL dependencies
+
+You will need to put valid pak and license files in 
+
+misc/msvc/baseq3
+
+and copy the file q3config.cfg into 
+
+/Documents and Settings/<user>/Application Data/Quake3/baseq3

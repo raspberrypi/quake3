@@ -1,0 +1,21 @@
+***************
+*** 611,619 ****
+  			//
+  			if ( oldDepthRange != depthRange ) {
+  				if ( depthRange ) {
+- 					qglDepthRange (0, 0.3);
+  				} else {
+- 					qglDepthRange (0, 1);
+  				}
+  				oldDepthRange = depthRange;
+  			}
+--- 611,619 ----
+  			//
+  			if ( oldDepthRange != depthRange ) {
+  				if ( depthRange ) {
++ 					qglDepthRange (0, 0.3f);
+  				} else {
++ 					qglDepthRange (0, 1.0f);
+  				}
+  				oldDepthRange = depthRange;
+  			}
