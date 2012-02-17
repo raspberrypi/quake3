@@ -32,5 +32,6 @@ make -j4 -f Makefile COPYDIR="$BASEQ3_DIR" ARCH=arm \
 
 # copy the required pak3 files over
 # cp "$BASEQ3_DIR"/baseq3/*.pk3 "build/release-linux-arm/baseq3/"
+# cp -a lib build/release-linux-arm/baseq3/
 exit 0
 
