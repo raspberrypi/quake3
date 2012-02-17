@@ -287,7 +287,7 @@ ifeq ($(PLATFORM),linux)
     HAVE_VM_COMPILED=true
   endif
   ifeq ($(ARCH),arm)
-    BASE_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
+    #BASE_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
   endif
   endif
   endif

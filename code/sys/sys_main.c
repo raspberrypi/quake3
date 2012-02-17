@@ -523,43 +523,13 @@ void Sys_SigAction(int sig, siginfo_t *info, void *v)
 main
 =================
 */
-#include "host_applications/framework/host_target.h"
-#include "host_applications/framework/platform.h"
-#include "vcos/vcos.h"
 
-static VCOS_THREAD_T mythread;
-
-int mymain(int argc, char **argv);
-
-void *q3threadentry(void *arg)
+int main( int argc, char **argv )
 {
-	// TODO casting away const ok?
-	return (void *) mymain(vcos_get_argc(), (char **)vcos_get_argv());
+   bcm_host_init();
+   return mymain(argc, argv);
 }
 
-void host_app_message_handler(uint16_t msg, uint32_t param1, uint32_t param2)
-{
-   switch (msg) {
-      case PLATFORM_MSG_INIT:
-      {
-	 // create me a thread please
-
-#define STACK_SIZE (0x100000)
-
-	void *stack = malloc(STACK_SIZE);
-	vcos_thread_create_classic(&mythread,"mythread",q3threadentry,NULL,
-	stack,STACK_SIZE,1,1,1);
-	break;
-      }
-      case PLATFORM_MSG_END:
-      case PLATFORM_MSG_USER:
-      case PLATFORM_MSG_BUTTON_PRESS:
-      case PLATFORM_MSG_BUTTON_RELEASE:
-      {
-         break;
-      }
-   }
-}
 
 int mymain( int argc, char **argv )
 {
