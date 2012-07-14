@@ -390,9 +390,7 @@ S_BeginRegistration
 =====================
 */
 void S_Base_BeginRegistration( void ) {
-   // XXX hacked to disable sound
-	//s_soundMuted = qfalse;		// we can play again
-   s_soundMuted = 1;
+   s_soundMuted = qfalse;		// we can play again
 
 	if (s_numSfx == 0) {
 		SND_setup();
@@ -1497,7 +1495,7 @@ qboolean S_Base_Init( soundInterface_t *si ) {
 
 	if ( r ) {
 		s_soundStarted = 1;
-		s_soundMuted = 1;
+//		s_soundMuted = 1;
 //		s_numSfx = 0;
 
 		Com_Memset(sfxHash, 0, sizeof(sfx_t *)*LOOP_HASH);

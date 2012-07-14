@@ -1380,7 +1380,7 @@ Q3OBJ = \
 
 
   Q3OBJ += $(if $(or $(findstring arm,$(ARCH)), $(USBDK)), \
-             $(B)/client/es_gamma.o $(B)/client/es_snd.o, \
+             $(B)/client/es_gamma.o $(B)/client/sdl_snd.o, \
              $(B)/client/sdl_gamma.o $(B)/client/sdl_snd.o)
 
   Q3OBJ += $(if $(USBDK), \
