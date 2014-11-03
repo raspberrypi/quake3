@@ -256,7 +256,8 @@ static qboolean GLimp_StartDriverAndSetMode( int mode, qboolean fullscreen, Nati
       EGL_DEPTH_SIZE,     16,
       EGL_STENCIL_SIZE,   0,
       EGL_SURFACE_TYPE,   EGL_WINDOW_BIT,
-      EGL_SAMPLE_BUFFERS, 1,
+      EGL_SAMPLE_BUFFERS, 0,
+      EGL_MIN_SWAP_INTERVAL, 0,
       EGL_NONE
    };
 
@@ -351,6 +352,14 @@ static qboolean GLimp_StartDriverAndSetMode( int mode, qboolean fullscreen, Nati
       glConfig.depthBits = depth;
       glConfig.stencilBits = stencil;
    }
+
+   // set swap interval
+   if (eglSwapInterval(g_EGLDisplay, r_swapInterval->integer) == EGL_FALSE)
+   {
+	  ri.Printf(PRINT_ALL, "Could not set swap interval\n");
+      return qfalse;
+   }
+
 
    if(r_stereoEnabled->integer)
       glConfig.stereoEnabled = qtrue;
