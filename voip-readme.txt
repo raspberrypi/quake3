@@ -30,7 +30,7 @@ Quick start for clients:
     - Hook up a microphone, connect to a VoIP-supporting server.
     - hold down 'q' key and talk.
 
-
+DO NOT MERGE THIS
 Cvars you can set:
 
 sv_voip: set to "1" (the default) to enable server-side VoIP support. Set to
