@@ -5,7 +5,7 @@
 
 # directory containing the ARM shared libraries (rootfs, lib/ of SD card)
 # specifically libbrcmEGL.so and libbrcmGLESv2.so
-ARM_LIBS=/opt/bcm-rootfs/opt/vc/lib
+ARM_LIBS=/opt/vc/lib
 SDL_LIB=lib
 
 # directory containing baseq3/ containing .pk3 files - baseq3 on CD
@@ -13,10 +13,10 @@ BASEQ3_DIR="/home/${USER}/"
 
 # directory to find khronos linux make files (with include/ containing
 # headers! Make needs them.)
-INCLUDES="-I/opt/bcm-rootfs/opt/vc/include -I/opt/bcm-rootfs/opt/vc/include/interface/vcos/pthreads"
+INCLUDES="-I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads"
 
 # prefix of arm cross compiler installed
-CROSS_COMPILE=bcm2708-
+#CROSS_COMPILE=bcm2708-
 
 # clean
 if [ $# -ge 1 ] && [ $1 = clean ]; then
